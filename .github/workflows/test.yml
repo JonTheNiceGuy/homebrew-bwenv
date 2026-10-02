@@ -1,0 +1,32 @@
+name: Test formula
+
+# Install, test and audit the formula on macOS and Linux whenever it changes,
+# including the automatic updates pushed by bwenv's release workflow.
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@e99025eb970cfa124b8284a35463d87426917478 # 2026.09.28.1
+
+      - name: Tap this repository
+        run: brew tap | grep -qx 'jontheniceguy/bwenv' || brew tap JonTheNiceGuy/bwenv "$GITHUB_WORKSPACE"
+
+      - name: Install
+        run: brew install --formula JonTheNiceGuy/bwenv/bwenv
+
+      - name: Test
+        run: brew test JonTheNiceGuy/bwenv/bwenv
+
+      - name: Audit
+        run: brew audit --strict --formula JonTheNiceGuy/bwenv/bwenv
