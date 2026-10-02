@@ -1,4 +1,4 @@
-# The url, sha256 and version lines are updated by the release workflow in
+# The url and sha256 lines are updated by the release workflow in
 # https://github.com/JonTheNiceGuy/bwenv whenever a new version is tagged.
 class Bwenv < Formula
   include Language::Python::Shebang
@@ -6,7 +6,6 @@ class Bwenv < Formula
   desc "Run commands with secrets resolved from op:// and bw:// references in Bitwarden"
   homepage "https://github.com/JonTheNiceGuy/bwenv"
   url "https://github.com/JonTheNiceGuy/bwenv/releases/download/v1.11/bwenv.py"
-  version "1.11"
   sha256 "f580dbb6dfc1ef2a331d00ea23a6dd26b64db91fe3dd3398d4414b0ede2f9e61"
   license "Unlicense"
 
