@@ -5,8 +5,8 @@ class Bwenv < Formula
 
   desc "Run commands with secrets resolved from op:// and bw:// references in Bitwarden"
   homepage "https://github.com/JonTheNiceGuy/bwenv"
-  url "https://github.com/JonTheNiceGuy/bwenv/releases/download/v1.12/bwenv.py"
-  sha256 "057fe6040e9aea484c5f98556d39bba5cc2fe193c030b65abb0f58e8c0e4f540"
+  url "https://github.com/JonTheNiceGuy/bwenv/releases/download/v1.13/bwenv.py"
+  sha256 "2fff2bde3b01bc534fcc3de1d139f3f5b40479b780308c1ac060aa27fac3b2d3"
   license "Unlicense"
 
   depends_on "bitwarden-cli"
